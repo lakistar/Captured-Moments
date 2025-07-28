@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captured Moments - Фотограф</title>
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2021/11/16/03/36/camera-6800043_1280.png" type="image/png">
+    <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2021/11/16/03/36/camera-6800043_1280.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <section id="hero" class="hero-section">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1>Зафіксовані Моменти. Ваші історії у кожному кадрі.</h1>
+            <a href="#portfolio" class="btn">Переглянути роботи</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section common-section">
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-text-content">
+                    <h2>Фотографія</h2>
+                    <p>Я [Ваше Ім'я], і я вірю, що кожен кадр – це не просто зображення, а частинка вашої історії, зафіксована назавжди. Моя пристрасть – уловлювати справжні емоції та красу, перетворюючи їх на вічні спогади.</p>
+                    <p>Мій підхід поєднує технічну досконалість із глибоким розумінням композиції та світла, щоб створити фотографії, які дійсно говорять самі за себе.</p>
+                    <a href="#contact" class="btn btn-secondary">Замовити зйомку</a>
+                </div>
+                <div class="about-image-content">
+                    <img src="https://cdn.pixabay.com/photo/2023/01/18/13/09/camera-7726802_1280.jpg" alt="Фото фотографа">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section common-section">
+        <div class="container">
+            <h2>Портфоліо</h2>
+            <div class="portfolio-categories">
+                <button class="category-btn active" data-category="all">Всі роботи</button>
+                <button class="category-btn" data-category="weddings">Весілля</button>
+                <button class="category-btn" data-category="portraits">Портрети</button>
+                <button class="category-btn" data-category="events">Події</button>
+                <button class="category-btn" data-category="fineart">Fine Art</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="weddings">
+                    <img src="https://rivne1.tv/pics2/1709/i084966.jpg?1505146049" alt="Весільне фото 1">
+                    <div class="item-overlay">Весільна зйомка</div>
+                </div>
+                <div class="portfolio-item" data-category="portraits">
+                    <img src="https://cdn.myportfolio.com/0382aadada314942ac8451f3396d4882/022713f5-1a7f-4331-815d-1dcd397d8c40_rw_1920.jpg?h=55694d4fd9751d6f05d94a7fd5564783" alt="Портрет 1">
+                    <div class="item-overlay">Студійний портрет</div>
+                </div>
+                <div class="portfolio-item" data-category="events">
+                    <img src="https://ireland.apollo.olxcdn.com/v1/files/grhf47zm4skm3-UA/image;s=2400x3600" alt="Подія 1">
+                    <div class="item-overlay">Репортаж подій</div>
+                </div>
+                <div class="portfolio-item" data-category="weddings">
+                    <img src="https://taor.com.ua/wp-content/uploads/2020/06/vesillya-7-min-scaled.jpg" alt="Весільне фото 2">
+                    <div class="item-overlay">Весільна серія</div>
+                </div>
+                <div class="portfolio-item" data-category="fineart">
+                    <img src="https://www.rbc.ua/static/img/2/4/241691704_377221447208609_987081735531937019_n_1200x675.jpg" alt="Fine Art 1" >
+                    <div class="item-overlay">Художнє фото</div>
+                </div>
+                <div class="portfolio-item" data-category="portraits">
+                    <img src="https://kava.ua/storage/files/filemanager/070721new_folder/5071.jpg" alt="Портрет 2" >
+                    <div class="item-overlay">Індивідуальна сесія</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section common-section">
+        <div class="container">
+            <h2>Мої послуги</h2>
+            <div class="service-cards-grid">
+                <div class="service-card">
+                    <h3>Весільна Фотографія</h3>
+                    <p>Від першого погляду до останнього танцю – зафіксую кожен незабутній момент вашого особливого дня.</p>
+                    <p class="price">Від <span>15 000</span> грн</p>
+                    <a href="#contact" class="btn btn-secondary">Дізнатись більше</a>
+                </div>
+                <div class="service-card">
+                    <h3>Портретні Сесії</h3>
+                    <p>Створюю унікальні портрети, що розкривають вашу індивідуальність у студії чи на природі.</p>
+                    <p class="price">Від <span>3 500</span> грн</p>
+                    <a href="#contact" class="btn btn-secondary">Замовити</a>
+                </div>
+                <div class="service-card">
+                    <h3>Репортажна Зйомка</h3>
+                    <p>Покриття подій будь-якого масштабу: корпоративи, конференції, приватні свята.</p>
+                    <p class="price">Від <span>1 000</span> грн/година</p>
+                    <a href="#contact" class="btn btn-secondary">Замовити</a>
+                </div>
+                <div class="service-card">
+                    <h3>Fine Art & Концептуальна</h3>
+                    <p>Творчі проєкти та художні зйомки, де кожен кадр – це витвір мистецтва.</p>
+                    <p class="price">За домовленістю</p>
+                    <a href="#contact" class="btn btn-secondary">Обговорити проєкт</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section common-section">
+        <div class="container">
+            <h2>Зв'язатись зі мною</h2>
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Ваше Ім'я:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Ваш Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Повідомлення:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Надіслати запит</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Додаткова інформація</h3>
+                    <p>Готовий обговорити ваші ідеї та створити щось справді особливе.</p>
+                    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                    <p>Телефон: <a href="tel:+380XXXXXXXXX">+380 XXXXX XXXX</a></p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram"></a>
+                        <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook"></a>
+                        <a href="https://t.me/yourprofile" target="_blank" aria-label="Telegram"><img src="https://img.icons8.com/ios-filled/30/ffffff/telegram-app.png" alt="Telegram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Моє Портфоліо</p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+/* Базові стилі та скидання */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-dark: #0A0A0A; /* Майже чорний фон */
+    --secondary-dark: #1A1A1A; /* Дуже темний сірий для деяких блоків */
+    --accent-color: #BB86FC; /* Світло-фіолетовий акцент */
+    --text-light: #F0F0F0; /* Світлий текст */
+    --text-muted: #A0A0A0; /* Приглушений текст */
+    --gold-accent: #FFD700; /* Золотий акцент для лого */
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--primary-dark);
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Запобігає горизонтальній прокрутці */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Загальні стилі для секцій */
+.common-section {
+    padding: 100px 0; /* Більші відступи між секціями */
+    position: relative;
+    overflow: hidden; /* Важливо для анімацій та паралаксу */
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 4.5em; /* Дуже великий заголовок */
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.1;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 60px; /* Більший відступ для H2 */
+    font-size: 3.5em;
+    position: relative;
+    padding-top: 60px; /* Для відступу від хедера при прокрутці */
+    margin-top: -60px; /* Компенсація для h2, щоб anchor працював коректно */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 5px; /* Вище, ніж було */
+    transform: translateX(-50%);
+    width: 100px; /* Ширша лінія */
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: #fff; /* Білий колір при наведенні для посилань */
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-dark); /* Темний текст на акцентній кнопці */
+    padding: 15px 35px;
+    border-radius: 5px;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease, color var(--transition-speed) ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.1em;
+}
+
+.btn:hover {
+    background-color: #fff; /* Білий фон при наведенні */
+    color: var(--accent-color); /* Акцентний текст при наведенні */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-dark);
+    transform: translateY(-5px);
+}
+
+/* Секція Hero */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.7); /* Трохи затемнити відео */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px; /* Збільшимо ширину контенту */
+}
+
+.hero-content h1 {
+    font-size: 5em; /* Ще більший заголовок */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .btn {
+    margin-top: 30px;
+}
+
+/* Секція "Про мене" (About Section) */
+.about-section {
+    background-color: var(--secondary-dark); /* Темніший фон для контрасту */
+}
+
+.about-inner {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Для адаптивності */
+}
+
+.about-text-content {
+    flex: 2;
+    min-width: 300px;
+    max-width: 600px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.about-text-content h2 {
+    text-align: left; /* Заголовок зліва */
+    margin-bottom: 30px;
+    font-size: 3em;
+}
+
+.about-text-content h2::after {
+    left: 0; /* Лінія під заголовком зліва */
+    transform: translateX(0);
+}
+
+.about-text-content p {
+    color: var(--text-muted); /* Приглушений текст */
+    margin-bottom: 25px;
+}
+
+.about-image-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    position: relative;
+    padding: 20px; /* Відступ для тіні */
+}
+
+.about-image-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Більш глибока тінь */
+}
+
+/* Секція Портфоліо */
+.portfolio-section {
+    background-color: var(--primary-dark); /* Знову базовий темний фон */
+}
+
+.portfolio-categories {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.category-btn {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--text-muted);
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-dark);
+    border-color: var(--accent-color);
+}
+
+.portfolio-grid {
+  display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     gap: 30px;
+     /* Додаємо наступні рядки для контролю розміру */
+     max-width: 800px; /* Максимальна ширина сітки (або залиште ширину контейнера) */
+     margin: 0 auto; /* Центрування сітки всередині контейнера */
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden; /* Переконайтеся, що це є і працює */
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transform: translateY(0);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+    /* Додаємо aspect-ratio для контейнера */
+    aspect-ratio: 4 / 3; /* Співвідношення ширини до висоти. Наприклад, 4:3 або 16:9. */
+    /* Можна використовувати: aspect-ratio: 1 / 1; для квадрата */
+    /* Можна використовувати: aspect-ratio: 16 / 9; для широких фото */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%; /* Зображення заповнює весь батьківський контейнер */
+    object-fit: cover; /* Обрізає зайве, щоб зображення повністю заповнило контейнер */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Збільшення при наведенні */
+    filter: brightness(0.8); /* Трохи затемнити */
+}
+
+.item-overlay {
+    position: absolute;
+    top: 0; /* Починаємо згори */
+    left: 0;
+    width: 100%;
+    height: 100%; /* Покриває весь елемент */
+    background: rgba(0, 0, 0, 0.6); /* Напівпрозорий темний фон */
+    color: #fff;
+    display: flex; /* Для центрування тексту */
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5em;
+    opacity: 0; /* За замовчуванням прихований */
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.portfolio-item:hover .item-overlay {
+    opacity: 1; /* Показати при наведенні */
+}
+
+/* Секція Послуги та Ціни */
+.services-section {
+    background-color: var(--secondary-dark); /* Темніший фон для контрасту */
+}
+
+.service-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Більший проміжок */
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: var(--primary-dark); /* Темний фон карток */
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    padding: 35px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border var(--transition-speed) ease;
+    border: 1px solid transparent; /* Для ефекту рамки */
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--accent-color); /* Акцентна рамка при наведенні */
+}
+
+.service-card h3 {
+    color: var(--text-light); /* Білий заголовок */
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    min-height: 70px; /* Щоб картки були однакової висоти, якщо опис різний */
+}
+
+.service-card .price {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--gold-accent); /* Золотий для ціни */
+    margin-bottom: 30px;
+}
+
+.service-card .price span {
+    font-size: 1.1em;
+}
+
+/* Секція Контакти */
+.contact-section {
+    background-color: var(--primary-dark);
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start; /* Вирівнювання по верху */
+}
+
+.contact-form-wrapper {
+    flex: 2;
+    min-width: 300px;
+    max-width: 600px;
+    background-color: var(--secondary-dark);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #444; /* Темна рамка */
+    border-radius: 5px;
+    font-size: 1.05em;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #222; /* Темний фон полів */
+    color: var(--text-light);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.3);
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2em;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+    padding: 40px 0; /* Додаємо відступи, щоб було схоже на блок */
+    text-align: left; /* Вирівнювання тексту */
+    color: var(--text-muted);
+}
+
+.contact-info h3 {
+    color: var(--text-light);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start; /* Вирівнювання зліва */
+    gap: 25px;
+}
+
+.social-links img {
+    width: 35px; /* Більші іконки */
+    height: 35px;
+    filter: brightness(0.8); /* Трохи затемнені */
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-links a:hover img {
+    transform: translateY(-5px);
+    filter: brightness(1.2); /* Світліші при наведенні */
+}
+
+/* Футер */
+.footer {
+    background-color: var(--secondary-dark);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9em;
+    border-top: 1px solid #333; /* Легка розділяюча лінія */
+}
+
+/* --- Анімації при прокрутці (для Intersection Observer) --- */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fade-in-on-scroll.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стилі для паралакс-елементів (легкий рух при прокрутці) */
+.parallax-element {
+    transition: transform 0.1s linear; /* Коротший перехід для легкого ефекту паралаксу */
+}
+
+@media (max-width: 992px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .common-section {
+        padding: var(--section-padding-tablet); /* Використовуємо змінну для відступів */
+    }
+
+    h1 {
+        font-size: 3.5em;
+    }
+    h2 {
+        font-size: 2.8em;
+    }
+
+    .nav ul li {
+        margin-left: 25px;
+    }
+
+    .about-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px; /* Менший розрив */
+    }
+    .about-text-content h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .about-text-content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .about-image-content {
+        max-width: 60%; /* Збільшимо зображення на планшетах */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Оптимізовано для 2-х колонок на планшетах */
+    }
+
+    .service-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Оптимізовано для 2-х колонок на планшетах */
+    }
+}
+
+/* Мобільні та невеликі планшети */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 3em;
+
+
+    }
+
+    h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 4em; /* Зменшимо для кращого вигляду на планшетах */
+    }
+
+    .about-image-content {
+        max-width: 70%; /* Ще трохи збільшимо на менших екранах */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобільних пристроях */
+        max-width: 400px; /* Обмежимо ширину для кращої читабельності */
+    }
+
+    .service-cards-grid {
+        grid-template-columns: 1fr; /* Одна колонка */
+    }
+
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Менший розрив */
+    }
+    .contact-form-wrapper {
+        width: 100%;
+        max-width: 500px;
+    }
+    .contact-info {
+        text-align: center;
+        padding: 0;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Мобільні телефони (Small phones) */
+@media (max-width: 576px) {
+    .common-section {
+        padding: var(--section-padding-mobile); /* Використовуємо змінну для відступів */
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .about-image-content {
+        max-width: 85%; /* Майже повна ширина */
+    }
+    .portfolio-item {
+        margin: 0 10px; /* Додамо невеликі відступи, якщо елементи занадто широкі */
+    }
+    .service-card {
+        padding: 25px; /* Зменшимо внутрішній відступ */
+    }
+    .service-card p {
+        min-height: auto; /* Вимикаємо фіксовану висоту для кращої адаптивності на дуже малих екранах */
+    }
+    .contact-form-wrapper {
+        padding: 30px;
+    }
+}
+
+/* Дуже маленькі телефони */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+}
